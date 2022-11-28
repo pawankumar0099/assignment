@@ -38,7 +38,6 @@ public class CsvReader {
 		Session session = hibernateTemplate.getSessionFactory().openSession();
 		// file reader object
 		FileReader currentCsvFile = null;
-		System.out.println(Files.filesList.length);
 		int csvFileIndex = 0;
 		// loop to iterate all files in file list
 		try {

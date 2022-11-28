@@ -17,9 +17,10 @@
 		<property name="driverClassName"
 			value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
 		<property name="url"
-			value="jdbc:sqlserver://nagarro-azure-training.database.windows.net:1433;database=exittest;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;" />
-		<property name="username" value="pawan@nagarro-azure-training" />
-		<property name="password" value="Prashant@123" />
+			value="jdbc:sqlserver://azureserviceapp.database.windows.net:1433;database=assignment;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;" />
+			       
+		<property name="username" value="pawan@azureserviceapp" />
+		<property name="password" value="Sanchit@123" />
 	</bean>
 
 	<bean
