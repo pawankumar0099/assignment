@@ -1,0 +1,35 @@
+<div class="container col-md-6">
+  <div>
+    <h2 style="text-align: center;">Create Review</h2>
+  </div>
+
+  <div class="mb-3">
+    <img style="width: 82px;height: 82px;" src="{{res.imageURL}}" alt="">
+    <span class="ms-3" style="font-size: 30px;"><b>{{res.brand +" " + res.name}}</b></span>
+  </div>
+  <div>
+    <h3>Rating</h3>
+    <ngb-rating style="font-size: 40px;" [(rate)]="currentRate" [max]="5"></ngb-rating><br>
+    <span class="error" *ngIf="currentRate==0 && reviewForm.valid ">review is required</span>
+
+  </div>
+
+
+  <form [formGroup]="reviewForm" (ngSubmit)="getData()">
+    <div class="mb-3">
+      <label for="heading" class="form-label">Add a heading</label>
+      <input type="text" class="form-control" formControlName="heading" required>
+      <span class="error" *ngIf="heading?.invalid && heading?.touched">Heading is required</span>
+    </div>
+
+    <div class="mb-3">
+      <label for="review" class="form-label">Add a written review</label><br>
+      <textarea class="form-control" formControlName="review" minlength="20" maxlength="400" required></textarea>
+      <span class="error" *ngIf="review?.invalid && review?.touched">review is required</span>
+    </div>
+
+
+    <button [disabled]="reviewForm.invalid" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>

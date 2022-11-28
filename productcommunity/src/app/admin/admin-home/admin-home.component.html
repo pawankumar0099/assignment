@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="btn btn-primary mt-2 ;" routerLink="/addproduct">Add Product</div>
+    <h2 style="text-align: center;" class="mt-4">New Reviews</h2>
+    <table class="table table-bordered">
+        <tbody>
+            <tr>
+                <th>Product Code</th>
+                <th>Brand</th>
+                <th>Review By</th>
+                <th>Heading</th>
+                <th>Review</th>
+            </tr>
+
+            <tr *ngFor="let i of reviews">
+                <td>{{i.product.code}}</td>
+                <td>{{i.product.brand}}</td>
+                <td>{{i.reviewBy}}</td>
+                <td>{{i.heading}}</td>
+                <td>{{i.review}}</td>
+                <td>
+                    <button (click)="approve(i.id)">Approve</button>
+                    <button class="ms-2" (click)="reject(i.id)">Reject</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

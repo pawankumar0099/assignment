@@ -1,0 +1,62 @@
+<div class="product-dtl mt-5">
+    <div class="container ">
+        <div class="row">
+            
+            <div class="col-md-3">
+                <img src="{{product.imageURL}}" alt="">
+            </div>
+
+            <div class="col-md-9">
+                <button  class="btn btn-primary float-end" routerLink="/review/{{product.id}}">Write a product review</button>
+                
+                <h1>{{product.name | titlecase}}</h1>
+                <p>Brand Name : <b>{{product.brand | titlecase}}</b></p>
+                <p>Price :<i class="fa fa-inr ms-2 me-1" aria-hidden="true"></i> <b>{{product.price}}</b></p>
+            </div>
+
+        </div>
+        <div class="row mt-5">
+            <h2 style="text-align: center;">Reviews</h2>
+            <table class="table table-bordered" *ngFor="let i of review">
+                <tbody>
+                    <tr>
+                        <th>
+                            Review By
+                        </th>
+                        <td>
+                            {{i.reviewBy}}
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>
+                            Heading
+                        </th>
+                        <td>
+                            {{i.heading}}
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>
+                            Rating
+                        </th>
+                        <td>
+                            {{i.rating}}
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th>
+                            Review
+                        </th>
+                        <td>
+                            {{i.review}}
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
