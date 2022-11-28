@@ -51,8 +51,6 @@ public class HomeController {
 		csvReader.insertCsvRecordIntoDatabase(); // insert files in database
 		
 		
-		Timer timer = new Timer();
-		timer.schedule(thread, 0, 1000);
 		
 		return "home";
 	}
