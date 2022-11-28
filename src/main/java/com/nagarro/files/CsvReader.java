@@ -76,8 +76,10 @@ public class CsvReader {
 
 				csvFileIndex++;
 			}
-		} catch (CsvValidationException | IOException | NullPointerException e) {
-			System.out.println("Csv file not available or Data not valid in Csv file");
+		} catch (Exception e) {
+			if(e instanceof CsvValidationException |e instanceof IOException | e instanceof NullPointerException) {
+				System.out.println("Csv file not available or Data not valid in Csv file");
+			} else { System.out.println(e);}
 		}
 		session.close();
 	}
